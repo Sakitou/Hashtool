@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HashTool Help</title>
+</head>
+<body>
+    <h1>HashTool Help</h1>
+
+    <p>Welcome to HashTool, a Python script for calculating and comparing hashes by Sakitou.</p>
+
+    <h2>Usage:</h2>
+    <pre>
+        python hashtool.py [options]
+
+        Options:
+        -s, --string     Calculate hashes for the provided text.
+        -f, --file       Calculate hashes for the contents of the file.
+        -c, --compare    Compare two files.
+        -i, --interface  Launch the GUI interface.
+        -hh, --help_html Open this help page in the default web browser.
+    </pre>
+
+    <h2>Examples:</h2>
+    <pre>
+        python hashtool.py -s "Hello, World!"
+        python hashtool.py -f example.txt
+        python hashtool.py -c file1.txt file2.txt
+        python hashtool.py -i
+        python hashtool.py -hh
+    </pre>
+
+    <h2>Installation:</h2>
+    <pre>
+        sudo cp hashtool.py /usr/local/bin/htool && sudo chmod +x /usr/local/bin/htool
+    </pre>
+
+    <h2>License:</h2>
+    <p>This script is licensed under the GNU General Public License (GPL) - see the <a href="LICENSE.md" target="_blank">LICENSE</a> file for details.</p>
+
+    <h2>GitHub Repository:</h2>
+    <p>For more information, contributions, or issues, visit the <a href="https://github.com/Sakitou/Hashtool" target="_blank">Hashtool GitHub repository</a>.</p>
+
+    <!-- Logo at the bottom -->
+    <img src="ht-logo.png" alt="HashTool Logo" style="width: 100px; height: auto; margin-top: 20px;">
+
+</body>
+</html>

@@ -8,30 +8,36 @@ import argparse
 import os
 import tkinter as tk
 from tkinter import filedialog
+from tkinter import ttk
+import webbrowser
 
 class HashToolGUI:
     def __init__(self, master):
         self.master = master
         master.title("HashTool GUI")
         master.geometry("620x410")
+        master.configure(bg="white")
 
-        self.label = tk.Label(master, text="Text/File to hash:")
+        self.label = tk.Label(master, text="Text/File to hash:", bg="white")
         self.label.pack(pady=10)
 
         self.entry = tk.Entry(master, width=50)
         self.entry.pack(pady=10)
 
-        self.calculate_button = tk.Button(master, text="Calculate Hash", command=self.calculate_hash)
+        self.calculate_button = ttk.Button(master, text="Calculate Hash", command=self.calculate_hash, style='TButton')
         self.calculate_button.pack(pady=10)
 
-        self.compare_button = tk.Button(master, text="Compare Files", command=self.compare_files)
+        self.compare_button = ttk.Button(master, text="Compare Files", command=self.compare_files, style='TButton')
         self.compare_button.pack(pady=10)
 
-        self.browse_button = tk.Button(master, text="Browse", command=self.browse_file)
+        self.browse_button = ttk.Button(master, text="Browse", command=self.browse_file, style='TButton')
         self.browse_button.pack(pady=10)
 
-        self.result_text = tk.Text(master, height=45, width=75, state=tk.DISABLED, wrap=tk.WORD) 
+        self.result_text = tk.Text(master, height=45, width=75, state=tk.DISABLED, wrap=tk.WORD)
         self.result_text.pack(pady=10)
+
+        style = ttk.Style()
+        style.configure('TButton', padding=5, relief="flat", background="lightblue")
 
     def calculate_hash(self):
         input_text = self.entry.get()
@@ -74,6 +80,9 @@ class HashToolGUI:
         self.result_text.insert(tk.END, result_text)
         self.result_text.config(state=tk.DISABLED)
 
+    def show_help(self):
+        webbrowser.open("help.html")
+
 def calculate_hash(text):
     sha256_hash = hashlib.sha256(text.encode()).hexdigest()
     sha1_hash = hashlib.sha1(text.encode()).hexdigest()
@@ -110,6 +119,7 @@ def main():
     parser.add_argument('-f', '--file', help='Calculate hashes for the contents of the file.')
     parser.add_argument('-c', '--compare', nargs=2, help='Compare two files.')
     parser.add_argument('-i', '--interface', action='store_true', help='Launch the GUI interface.')
+    parser.add_argument('-hh', '--help_html', action='store_true', help='Open help.html in the default web browser.')
 
     args = parser.parse_args()
 
@@ -117,6 +127,8 @@ def main():
         root = tk.Tk()
         app = HashToolGUI(root)
         root.mainloop()
+    elif args.help_html:
+        webbrowser.open("help.html")
     else:
         if args.string:
             print("Calculating...")
