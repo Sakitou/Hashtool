@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# Hashtools is a Python script for calculating and comparing hashes by Sakitou.
+# github.com/Sakitou/Hashtool
+
 import hashlib
 import argparse
 import os
@@ -10,7 +13,7 @@ class HashToolGUI:
     def __init__(self, master):
         self.master = master
         master.title("HashTool GUI")
-        master.geometry("620x410")  # Ajustement de la taille de la fenêtre
+        master.geometry("620x410")
 
         self.label = tk.Label(master, text="Text/File to hash:")
         self.label.pack(pady=10)
@@ -27,7 +30,7 @@ class HashToolGUI:
         self.browse_button = tk.Button(master, text="Browse", command=self.browse_file)
         self.browse_button.pack(pady=10)
 
-        self.result_text = tk.Text(master, height=45, width=75, state=tk.DISABLED, wrap=tk.WORD)  # Ajustement de la hauteur
+        self.result_text = tk.Text(master, height=45, width=75, state=tk.DISABLED, wrap=tk.WORD) 
         self.result_text.pack(pady=10)
 
     def calculate_hash(self):

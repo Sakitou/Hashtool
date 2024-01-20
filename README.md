@@ -4,19 +4,23 @@ Hashtools is a Python script for calculating and comparing hashes by Sakitou.
 
 ## Usage
 
+### Start GUI (BETA)
+```bash
+htool -i
+```
 ### Calculate Hashes for a String
 ```bash
-python hashtool.py -s "your_text_here"
+htool -s "your_text_here"
 ```
 
 ### Calculate Hashes for a File
 ```bash
-python hashtool.py -f /path/to/your/file
+htool -f /path/to/your/file
 ```
 
 ### Compare Two Files
 ```bash
-python hashtool.py -c /path/to/file1 /path/to/file2
+htool -c /path/to/file1 /path/to/file2
 ```
 
 ## Installation
@@ -28,17 +32,22 @@ To use hashtool as a command, follow these steps:
    sudo mv hashtool.py /usr/local/bin/
    ```
 
-2. Rename the script to "hashtool":
+2. Rename the script to "htool":
    ```bash
-   sudo mv /usr/local/bin/hashtool.py /usr/local/bin/hashtool
+   sudo mv /usr/local/bin/hashtool.py /usr/local/bin/htool
    ```
 
 3. Make it executable:
    ```bash
-   sudo chmod +x /usr/local/bin/hashtool
+   sudo chmod +x /usr/local/bin/htool
    ```
+Or you can do it in one line: 
 
-Now, you can use the `hashtool` command globally.
+```bash
+sudo cp hashtool.py /usr/local/bin/htool && sudo chmod +x /usr/local/bin/htool
+```
+
+Now, you can use the `htool -<option>` command globally.
 
 ## License
 
