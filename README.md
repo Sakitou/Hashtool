@@ -56,3 +56,7 @@ This script is licensed under the GNU General Public License (GPL) - see the [LI
 ## GitHub Repository
 
 For more information, contributions, or issues, visit the [Hashtools GitHub repository](https://github.com/Sakitou/Hashtools/).
+
+### To support me
+
+If you want, you can buy me a coffee [here](https://www.buymeacoffee.com/sakitou) or make a BTC donation: bc1qjjdnhc8fcf2534tj9q8updzlgaak7hddyzv2fh

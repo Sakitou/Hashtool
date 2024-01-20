@@ -2,6 +2,8 @@
 
 # Hashtools is a Python script for calculating and comparing hashes by Sakitou.
 # github.com/Sakitou/Hashtool
+# BTC donation : bc1qjjdnhc8fcf2534tj9q8updzlgaak7hddyzv2fh
+# XMR donation : 42zgEnNhE1jUijoAKqvWTagZvbSzcsnaDD2HjKC5A7Td5ExNms7CLUoe9V91TBNHq2G7odm7pSAtp4tQX1SVq845KxhFWer
 
 import hashlib
 import argparse
