@@ -14,7 +14,7 @@ def calculate_hash(text):
 
 def hash_file(file_path):
     if not os.path.isfile(file_path):
-        print(f"Le fichier {file_path} n'existe pas.")
+        print(f"The file {file_path} does not exist.")
         return
 
     with open(file_path, 'rb') as f:
@@ -31,29 +31,29 @@ def compare_files(file_path1, file_path2):
         return False
 
 def main():
-    parser = argparse.ArgumentParser(description='Calculer et comparer les hashs.')
-    parser.add_argument('-s', '--string', help='Calculer les hashs pour le texte fourni.')
-    parser.add_argument('-f', '--file', help='Calculer les hashs pour le contenu du fichier.')
-    parser.add_argument('-c', '--compare', nargs=2, help='Comparer deux fichiers.')
+    parser = argparse.ArgumentParser(description='Calculate and compare hashes.')
+    parser.add_argument('-s', '--string', help='Calculate hashes for the provided text.')
+    parser.add_argument('-f', '--file', help='Calculate hashes for the contents of the file.')
+    parser.add_argument('-c', '--compare', nargs=2, help='Compare two files.')
 
     args = parser.parse_args()
 
     if args.string:
-        print("Calcul en cours...")
+        print("Calculating...")
         sha256, sha1, sha512, md5 = calculate_hash(args.string)
-        print(f"SHA256 : {sha256}\nSHA1 : {sha1}\nSHA512 : {sha512}\nMD5 : {md5}")
+        print(f"SHA256: {sha256}\nSHA1: {sha1}\nSHA512: {sha512}\nMD5: {md5}")
 
     elif args.file:
-        print("Calcul en cours...")
+        print("Calculating...")
         sha256, sha1, sha512, md5 = hash_file(args.file)
-        print(f"SHA256 : {sha256}\nSHA1 : {sha1}\nSHA512 : {sha512}\nMD5 : {md5}")
+        print(f"SHA256: {sha256}\nSHA1: {sha1}\nSHA512: {sha512}\nMD5: {md5}")
 
     elif args.compare:
         file1, file2 = args.compare
         if compare_files(file1, file2):
-            print("Les fichiers correspondent.")
+            print("The files match.")
         else:
-            print("Les fichiers ne correspondent pas.")
+            print("The files do not match.")
 
 if __name__ == "__main__":
     main()

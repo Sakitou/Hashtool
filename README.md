@@ -1,40 +1,49 @@
-# Hashtool
+# Hashtools
 
-Ce script Python permet de calculer les hashs (SHA256, SHA1, SHA512, MD5) pour un texte donné, le contenu d'un fichier ou de comparer deux fichiers.
+Hashtools is a Python script for calculating and comparing hashes by Sakitou.
 
-## Utilisation
+## Usage
 
-### Calculer les hashs pour un texte
-
+### Calculate Hashes for a String
 ```bash
-./hashtext.py -s "exemple-de-mot"
+python hashtool.py -s "your_text_here"
 ```
 
-### Calculer les hashs pour le contenu d'un fichier
-
+### Calculate Hashes for a File
 ```bash
-./hashtext.py -f chemin-vers-fichier
+python hashtool.py -f /path/to/your/file
 ```
 
-### Comparer deux fichiers
-
+### Compare Two Files
 ```bash
-./hashtext.py -c chemin-vers-fichier1 chemin-vers-fichier2
+python hashtool.py -c /path/to/file1 /path/to/file2
 ```
 
-## Exécution
+## Installation
 
-Assurez-vous que le script est exécutable :
+To use hashtool as a command, follow these steps:
 
-```bash
-chmod +x hashtext.py
-```
+1. Move the script to "/usr/local/bin/":
+   ```bash
+   sudo mv hashtool.py /usr/local/bin/
+   ```
 
-Ensuite, vous pouvez utiliser les commandes décrites ci-dessus.
+2. Rename the script to "hashtool":
+   ```bash
+   sudo mv /usr/local/bin/hashtool.py /usr/local/bin/hashtool
+   ```
 
-## Remarques
+3. Make it executable:
+   ```bash
+   sudo chmod +x /usr/local/bin/hashtool
+   ```
 
-- Si un fichier spécifié n'existe pas, le script affichera un message d'erreur.
-- Le script utilise l'encodage 'replace' pour lire le contenu des fichiers, cela peut entraîner des caractères spéciaux dans les hashs si le fichier n'est pas en texte brut.
+Now, you can use the `hashtool` command globally.
 
-N'hésitez pas à explorer et à modifier le script selon vos besoins !
+## License
+
+This script is licensed under the GNU General Public License (GPL) - see the [LICENSE.md](LICENSE) file for details.
+
+## GitHub Repository
+
+For more information, contributions, or issues, visit the [Hashtools GitHub repository](https://github.com/Sakitou/Hashtools/).
