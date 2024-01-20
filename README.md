@@ -42,7 +42,7 @@ Now, you can use the `hashtool` command globally.
 
 ## License
 
-This script is licensed under the GNU General Public License (GPL) - see the [LICENSE.md](LICENSE) file for details.
+This script is licensed under the GNU General Public License (GPL) - see the [LICENSE](LICENSE.md) file for details.
 
 ## GitHub Repository
 
